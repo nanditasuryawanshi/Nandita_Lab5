@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Management System</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Employee Management System</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+</nav>
+<div class = "container">
+		<div class = "row">
+			<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class = "text-center"> Create New Employee </h1>
+				<div class = "card-body">
+	
+		
+		<hr>
+		<h2>Save Employee</h2>
+
+		<form action="#" th:action="@{/saveEmployee}" th:object="${employee}"
+			method="POST">
+			<input type="text" th:field="*{firstName}"
+				placeholder="First Name" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{lastName}"
+				placeholder="Last Name" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{email}"
+				placeholder="Employee Email" class="form-control mb-4 col-4">
+				
+				<button type="submit" class="btn btn-info col-2"> Save</button>
+		</form>
+		
+		<hr>
+		
+		<a th:href = "@{/}"> Back to Employee List</a>
+	</div></div></div>
+	
+</body>
+</html>
